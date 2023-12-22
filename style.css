@@ -4,11 +4,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.grid {
-    background-color: black;
-    display: flex;
-}
-
 .grid-row {
     display: flex;
     flex-direction: row;
