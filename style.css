@@ -7,6 +7,17 @@
 body {
     background-color: #1a1a1a;
     color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+}
+
+.viewport {
+    display: flex;
 }
 
 #grid-container {
@@ -27,7 +38,20 @@ body {
 
 .grid-square {
     flex-shrink: 1;
+    flex-grow: 1;
     background-color: #fefefe;
     aspect-ratio: 1 / 1;
     width: 25px;
+}
+
+#create-grid-btn {
+    border: 3px solid #1a1a1a;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 170px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #9ae071;
 }
