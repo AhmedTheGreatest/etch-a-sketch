@@ -1,20 +1,30 @@
+// DOM Elements
 const grid = document.querySelector("#grid");
 const createGridButton = document.querySelector("#create-grid-btn");
 
+// Add an event listener to the create grid button
 createGridButton.addEventListener("click", () => {
     let gridSize;
+    
+    // Keep prompting the user for a grid size until its valid
     do {
-        gridSize = prompt("Enter Grid Size (Max 100): ", 16);
-    } while (gridSize < 1 || gridSize > 100 || gridSize === null);
+        gridSize = prompt("Enter Grid Size (Max 100): ", DEFAULT_GRID_SIZE);
+        // If the user has cancelled, cancel the new grid operation
+        if (gridSize === null) {
+            return;
+        }
 
-    createGrid(gridSize);
+    } while (gridSize < 1 || gridSize > 100);
+
+    createGrid(gridSize); // Create a grid with the specified grid size
 });
 
+// Constants
 const DEFAULT_GRID_SIZE = 16;
 
 // Creates a grid of specified number of divs
 function createGrid(gridSize) {
-    clearGrid(); // Clears the grid to avoid any problems
+    removeGrid(); // Clears the grid to avoid any problems
 
     for (let i = 0; i < gridSize; i++) {
         // Creates a grid row
@@ -27,7 +37,7 @@ function createGrid(gridSize) {
             gridSquare.classList.add("grid-square");
 
             gridSquare.addEventListener("mouseenter", () => {
-                gridSquare.style.backgroundColor = "red";
+                gridSquare.style.backgroundColor = "#1a1a1a";
             });
 
             gridRow.appendChild(gridSquare);
@@ -36,7 +46,8 @@ function createGrid(gridSize) {
     }
 }
 
-function clearGrid() {
+// Removes (Clears) the grid.
+function removeGrid() {
     while (grid.lastElementChild) {
         grid.removeChild(grid.lastElementChild);
     }
