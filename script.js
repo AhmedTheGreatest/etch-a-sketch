@@ -37,7 +37,7 @@ function createGrid(gridSize) {
             gridSquare.classList.add("grid-square");
 
             gridSquare.addEventListener("mouseenter", () => {
-                gridSquare.style.backgroundColor = "#1a1a1a";
+                gridSquare.style.backgroundColor = getRandomColor();
             });
 
             gridRow.appendChild(gridSquare);
@@ -51,6 +51,15 @@ function removeGrid() {
     while (grid.lastElementChild) {
         grid.removeChild(grid.lastElementChild);
     }
+}
+
+// Get a random color
+function getRandomColor() {
+    red = Math.floor(Math.random() * 255);
+    green = Math.floor(Math.random() * 255);
+    blue = Math.floor(Math.random() * 255);
+
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 
 // Create the grid
