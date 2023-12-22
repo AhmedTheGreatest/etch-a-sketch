@@ -3,3 +3,20 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+.grid {
+    background-color: black;
+    display: flex;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-square {
+    background-color: black;
+    width: 25px;
+    height: 25px;
+    margin: 1px;
+}
